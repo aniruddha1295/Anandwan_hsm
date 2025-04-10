@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Admin Dashboard</h1>
+    
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="{{ url_for('admin.index') }}" class="list-group-item list-group-item-action active">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="{{ url_for('admin.users') }}" class="list-group-item list-group-item-action">
+                    <i class="bi bi-people me-2"></i> User Management
+                </a>
+                <a href="{{ url_for('admin.settings') }}" class="list-group-item list-group-item-action">
+                    <i class="bi bi-gear me-2"></i> System Settings
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-primary text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Users</h5>
+                            <h2>{{ user_count }}</h2>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="{{ url_for('admin.users') }}">View Details</a>
+                            <div class="small text-white">
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-success text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">System Status</h5>
+                            <h2>Operational</h2>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="{{ url_for('admin.settings') }}">View Settings</a>
+                            <div class="small text-white">
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-info text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Database</h5>
+                            <h2>Connected</h2>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <span class="small text-white">System Healthy</span>
+                            <div class="small text-white">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="bi bi-info-circle me-1"></i>
+                    Admin Information
+                </div>
+                <div class="card-body">
+                    <h5>Welcome to the Admin Panel</h5>
+                    <p>From here, you can manage users, roles, and system settings for the Anandwan Hospital Management System.</p>
+                    <p>Use the navigation menu on the left to access different administrative functions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

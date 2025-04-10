@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">User Profile</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <div class="display-1 text-success">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h3>{{ current_user.username }}</h3>
+                        <p class="badge bg-success">{{ current_user.role|capitalize }}</p>
+                    </div>
+                    
+                    <table class="table">
+                        <tr>
+                            <th width="30%">Username:</th>
+                            <td>{{ current_user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ current_user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Role:</th>
+                            <td>{{ current_user.role|capitalize }}</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="mt-4">
+                        <h5>Role Permissions:</h5>
+                        <ul class="list-group">
+                            {% if current_user.role == 'doctor' %}
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> View all patient information</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Create and manage prescriptions</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Update patient treatment status</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> View inventory</li>
+                            {% elif current_user.role == 'nurse' %}
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> View patient information</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Update patient details</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> View prescriptions</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Manage inventory</li>
+                            {% elif current_user.role == 'admin' %}
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Full system access</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> User management</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> View reports and statistics</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Full inventory control</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

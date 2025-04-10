@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}System Settings{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">System Settings</h1>
+    
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="{{ url_for('admin.index') }}" class="list-group-item list-group-item-action">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="{{ url_for('admin.users') }}" class="list-group-item list-group-item-action">
+                    <i class="bi bi-people me-2"></i> User Management
+                </a>
+                <a href="{{ url_for('admin.settings') }}" class="list-group-item list-group-item-action active">
+                    <i class="bi bi-gear me-2"></i> System Settings
+                </a>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-gear me-2"></i>Hospital Settings</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="mb-3">
+                            {{ form.hospital_name.label(class="form-label") }}
+                            {{ form.hospital_name(class="form-control", value="Anandwan Leprosy Hospital") }}
+                            {% for error in form.hospital_name.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.hospital_address.label(class="form-label") }}
+                            {{ form.hospital_address(class="form-control", rows=3, value="Anandwan, Warora, Maharashtra 442914, India") }}
+                            {% for error in form.hospital_address.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.contact_email.label(class="form-label") }}
+                            {{ form.contact_email(class="form-control", value="contact@anandwan.org") }}
+                            {% for error in form.contact_email.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.contact_phone.label(class="form-label") }}
+                            {{ form.contact_phone(class="form-control", value="+91 12345 67890") }}
+                            {% for error in form.contact_phone.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            {{ form.submit(class="btn btn-success") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-shield-lock me-2"></i>Security Settings</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Password Policy</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="passwordComplexity" checked>
+                            <label class="form-check-label" for="passwordComplexity">Require complex passwords</label>
+                        </div>
+                        <div class="form-text">Passwords must be at least 8 characters and include numbers and special characters</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Login Attempts</label>
+                        <select class="form-select">
+                            <option value="3">3 attempts (Recommended)</option>
+                            <option value="5">5 attempts</option>
+                            <option value="10">10 attempts</option>
+                        </select>
+                        <div class="form-text">Maximum failed login attempts before account is locked</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Session Timeout</label>
+                        <select class="form-select">
+                            <option value="15">15 minutes</option>
+                            <option value="30" selected>30 minutes</option>
+                            <option value="60">1 hour</option>
+                        </select>
+                        <div class="form-text">Time before an idle user is logged out</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

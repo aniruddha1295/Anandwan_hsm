@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}About Anandwan{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="mb-4 text-center">About Anandwan</h1>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <img src="{{ url_for('static', filename='images/about.jpg') }}" class="img-fluid rounded" alt="Anandwan Community" style="max-height: 400px;">
+                    </div>
+                    
+                    <h2>Our History</h2>
+                    <p>Anandwan ("Forest of Joy") was established in 1949 by Baba Amte, a lawyer turned social worker who dedicated his life to serving those afflicted with leprosy. Starting with just a few acres of barren land and a handful of patients who were rejected by society, Baba Amte created a self-sufficient community where those affected by leprosy could live with dignity.</p>
+                    
+                    <p>Today, Anandwan has grown into a thriving community with:</p>
+                    <ul>
+                        <li>A modern hospital with dedicated leprosy treatment facilities</li>
+                        <li>Rehabilitation centers for physical therapy and occupational training</li>
+                        <li>Schools and vocational training programs</li>
+                        <li>Sustainable agriculture and cottage industries</li>
+                        <li>Cultural and artistic activities</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>Our Mission</h2>
+                    <p>Anandwan's mission is to provide comprehensive care to people affected by leprosy through:</p>
+                    <ul>
+                        <li><strong>Early detection and medical treatment:</strong> Finding and treating leprosy in its early stages to prevent disabilities</li>
+                        <li><strong>Physical rehabilitation:</strong> Specialized care to minimize and manage disabilities</li>
+                        <li><strong>Social and economic rehabilitation:</strong> Training programs and employment opportunities to restore dignity and self-reliance</li>
+                        <li><strong>Community education:</strong> Raising awareness to reduce stigma and promote early detection</li>
+                        <li><strong>Research:</strong> Contributing to better understanding and management of leprosy</li>
+                    </ul>
+                    <p>We believe in empowering patients through self-reliance rather than dependency on charity.</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>Our Approach to Leprosy Treatment</h2>
+                    <p>Leprosy (Hansen's disease) is a chronic infectious disease caused by <em>Mycobacterium leprae</em>. It primarily affects the skin, peripheral nerves, and mucous membranes.</p>
+                    
+                    <h5 class="mt-4">Treatment Regimen</h5>
+                    <p>We follow the World Health Organization's Multi-Drug Therapy (MDT) protocol:</p>
+                    <ul>
+                        <li><strong>Paucibacillary (PB) leprosy:</strong> 6 months of treatment with two drugs (rifampicin and dapsone)</li>
+                        <li><strong>Multibacillary (MB) leprosy:</strong> 12 months of treatment with three drugs (rifampicin, clofazimine, and dapsone)</li>
+                    </ul>
+                    
+                    <h5 class="mt-4">Disability Prevention</h5>
+                    <p>Our approach includes:</p>
+                    <ul>
+                        <li>Regular nerve function assessment</li>
+                        <li>Early intervention for reactions and neuritis</li>
+                        <li>Self-care training for patients</li>
+                        <li>Protective footwear and adaptive devices</li>
+                        <li>Physical therapy and wound care</li>
+                    </ul>
+                    
+                    <h5 class="mt-4">Holistic Care</h5>
+                    <p>Beyond medical treatment, we provide:</p>
+                    <ul>
+                        <li>Psychological support and counseling</li>
+                        <li>Vocational training</li>
+                        <li>Social integration programs</li>
+                        <li>Community-based rehabilitation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h2>Join Us in Our Mission</h2>
+                    <p>There are many ways to support Anandwan's work:</p>
+                    <ul>
+                        <li>Volunteer your time and skills</li>
+                        <li>Donate to support our programs</li>
+                        <li>Raise awareness about leprosy in your community</li>
+                        <li>Partner with us for research and educational initiatives</li>
+                    </ul>
+                    <p class="mt-4">Together, we can create a world where leprosy is no longer a cause of disability, discrimination, and suffering.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

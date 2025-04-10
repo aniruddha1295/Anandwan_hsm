@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Patients Management{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Patient Management</h1>
+        <a href="{{ url_for('patients.add') }}" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Add New Patient
+        </a>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-success">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Leprosy Type</th>
+                            <th>Registered</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if patients %}
+                            {% for patient in patients %}
+                            <tr>
+                                <td>{{ patient.id }}</td>
+                                <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                                <td>{{ patient.gender or 'N/A' }}</td>
+                                <td>{{ patient.age or 'N/A' }}</td>
+                                <td>{{ patient.leprosy_type or 'Unknown' }}</td>
+                                <td>{{ patient.registration_date.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    {% if patient.treatment_status == 'active' %}
+                                        <span class="badge bg-primary">{{ patient.treatment_status }}</span>
+                                    {% elif patient.treatment_status == 'completed' %}
+                                        <span class="badge bg-success">{{ patient.treatment_status }}</span>
+                                    {% elif patient.treatment_status == 'defaulted' %}
+                                        <span class="badge bg-warning">{{ patient.treatment_status }}</span>
+                                    {% elif patient.treatment_status == 'new' %}
+                                        <span class="badge bg-info">{{ patient.treatment_status }}</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">unknown</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="{{ url_for('patients.view', id=patient.id) }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="{{ url_for('patients.edit', id=patient.id) }}" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        {% if current_user.role == 'doctor' %}
+                                        <a href="{{ url_for('patients.prescribe', id=patient.id) }}" class="btn btn-sm btn-outline-success">
+                                            <i class="bi bi-file-medical"></i>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="8" class="text-center">No patients found.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
