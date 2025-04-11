@@ -78,3 +78,29 @@ A comprehensive web application designed to streamline hospital operations at An
 
 ### Local Development Setup
 1. Clone the repository
+
+### Deployment to Vercel
+
+1. Ensure you have `vercel.json` configured correctly
+2. Set up environment variables in Vercel dashboard
+3. Deploy using Vercel CLI or GitHub integration
+
+## Future Enhancements
+
+- Laboratory test integration
+- Mobile application for patients
+- Telemedicine capabilities
+- Billing and insurance processing
+- Pharmacy inventory management
+- Advanced analytics dashboard
+
+## Contributors
+
+- Aniruddha - Project Lead & Developer
+
+## License
+
+This project is proprietary software developed for Anandwan Hospital.
+
+---
+Last updated: 2025-04-11
