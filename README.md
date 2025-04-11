@@ -10,7 +10,6 @@ A comprehensive web application designed to streamline hospital operations at An
 - **SQLAlchemy**: SQL toolkit and Object-Relational Mapping (ORM) library
 - **Flask-Login**: User session management for Flask
 - **Flask-WTF**: Simple integration of Flask and WTForms, including CSRF protection
-- **Flask-Migrate**: SQLAlchemy database migrations using Alembic
 - **PyMySQL/mysqlclient**: MySQL database connector for Python
 
 ### Frontend
@@ -18,8 +17,6 @@ A comprehensive web application designed to streamline hospital operations at An
 - **JavaScript**: Client-side scripting
 - **Bootstrap 5**: Responsive UI framework
 - **Jinja2**: Templating engine for Flask
-- **Chart.js**: JavaScript charting for analytics visualizations
-- **DataTables**: Advanced table controls for data display
 
 ### Database
 - **MySQL**: Relational database for data storage
@@ -37,37 +34,29 @@ A comprehensive web application designed to streamline hospital operations at An
 
 ## Project Structure
 
-## Features
+## Currently Active Features
 
 ### User Authentication & Authorization
 - Multi-role user system (Admin, Doctor, Staff)
-- Secure password management
-- Role-based access control
+- Secure login and authentication
+- Role-based access control for different user types
 
 ### Patient Management
-- Patient registration and profile management
+- Patient registration with personal details
+- Basic patient profile management
 - Medical history tracking
-- Document upload and management
 
 ### Appointment System
 - Schedule appointments with doctors
-- Manage doctor availability
-- Appointment reminders and notifications
+- View upcoming appointments
 
 ### Medical Records
-- Electronic health records
-- Treatment history
-- Prescription management
+- Basic electronic health records
+- Treatment history for patients
 
 ### Administrative Tools
 - Staff management
-- Department configuration
-- System settings
-
-### Analytics & Reporting
-- Patient statistics
-- Department utilization
-- Appointment analytics
+- Basic system settings
 
 ## Installation and Setup
 
@@ -78,29 +67,16 @@ A comprehensive web application designed to streamline hospital operations at An
 
 ### Local Development Setup
 1. Clone the repository
-
+2. 
 ### Deployment to Vercel
 
 1. Ensure you have `vercel.json` configured correctly
 2. Set up environment variables in Vercel dashboard
 3. Deploy using Vercel CLI or GitHub integration
 
-## Future Enhancements
-
-- Laboratory test integration
-- Mobile application for patients
-- Telemedicine capabilities
-- Billing and insurance processing
-- Pharmacy inventory management
-- Advanced analytics dashboard
-
 ## Contributors
 
 - Aniruddha - Project Lead & Developer
 
-## License
-
-This project is proprietary software developed for Anandwan Hospital.
-
 ---
-Last updated: 2025-04-11
+Last updated: 2023-04-11
