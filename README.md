@@ -1,2 +1,38 @@
-# Anandwan_hsm
-Management system for Anandwan Leprosy Hospital
+# Anandwan Hospital Management System
+
+A comprehensive web application designed to streamline hospital operations at Anandwan facility. This system manages patient records, doctor schedules, appointments, and administrative tasks through a secure, intuitive interface.
+
+## Tech Stack
+
+### Backend
+- **Python 3.9+**: Core programming language
+- **Flask**: Lightweight WSGI web application framework
+- **SQLAlchemy**: SQL toolkit and Object-Relational Mapping (ORM) library
+- **Flask-Login**: User session management for Flask
+- **Flask-WTF**: Simple integration of Flask and WTForms, including CSRF protection
+- **Flask-Migrate**: SQLAlchemy database migrations using Alembic
+- **PyMySQL/mysqlclient**: MySQL database connector for Python
+
+### Frontend
+- **HTML5/CSS3**: Markup and styling
+- **JavaScript**: Client-side scripting
+- **Bootstrap 5**: Responsive UI framework
+- **Jinja2**: Templating engine for Flask
+- **Chart.js**: JavaScript charting for analytics visualizations
+- **DataTables**: Advanced table controls for data display
+
+### Database
+- **MySQL**: Relational database for data storage
+- **PlanetScale**: Serverless MySQL database platform (deployment)
+
+### Deployment & Infrastructure
+- **Vercel**: Serverless deployment platform
+- **Git/GitHub**: Version control and code repository
+- **Environment Variables**: Configuration management using python-dotenv
+
+### Security
+- **Bcrypt**: Password hashing
+- **CSRF Protection**: Cross-Site Request Forgery prevention
+- **Role-Based Access Control**: Permission management by user role
+
+## Project Structure
