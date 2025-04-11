@@ -36,3 +36,45 @@ A comprehensive web application designed to streamline hospital operations at An
 - **Role-Based Access Control**: Permission management by user role
 
 ## Project Structure
+
+## Features
+
+### User Authentication & Authorization
+- Multi-role user system (Admin, Doctor, Staff)
+- Secure password management
+- Role-based access control
+
+### Patient Management
+- Patient registration and profile management
+- Medical history tracking
+- Document upload and management
+
+### Appointment System
+- Schedule appointments with doctors
+- Manage doctor availability
+- Appointment reminders and notifications
+
+### Medical Records
+- Electronic health records
+- Treatment history
+- Prescription management
+
+### Administrative Tools
+- Staff management
+- Department configuration
+- System settings
+
+### Analytics & Reporting
+- Patient statistics
+- Department utilization
+- Appointment analytics
+
+## Installation and Setup
+
+### Prerequisites
+- Python 3.9 or higher
+- MySQL database
+- Git
+
+### Local Development Setup
+1. Clone the repository
